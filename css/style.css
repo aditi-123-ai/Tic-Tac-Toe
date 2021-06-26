@@ -1,0 +1,143 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    color: #4c6986;
+}
+
+.title {
+    max-width: 500px;
+}
+
+.wrapper{
+    height: 800px;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 40px;
+    background: #d9a7c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.right{
+    margin-left: 80px;
+}
+
+h1{
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.restart {
+    width: 175px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 2px solid #4c6986;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.restart:hover{
+    background: #4c6986;
+    color: white;
+}
+
+.game {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    color: #9a9a9a;
+    font-size: 24px;
+}
+
+.header .player-X {
+    flex: 1;
+    border-bottom: 5px solid #eee;
+    padding-bottom: 8px;
+}
+
+.player-X.active{
+    color: #42BED7;
+    border-color: #42BED7;
+}
+
+.header .player-O {
+    flex: 1;
+    border-bottom: 5px solid #eee;
+    padding-bottom: 8px;
+}
+
+.player-O.active{
+    color: #f083de;
+    border-color: #f083de;
+}
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    flex-grow: 1;
+    grid-gap: 0px;
+    padding: 10px;
+    background: transparent;
+}
+
+.board-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    background: transparent;
+    cursor: pointer;
+
+}
+
+.board-tile:not(:nth-child(3n)) {
+    border-right: 3px solid rgba(137, 163, 189,0.4);
+}
+
+.board-tile:not(:nth-last-child(-n + 3)) {
+    border-bottom: 3px solid rgba(137, 163, 189,0.4);;
+}
+
+.board-tile:hover{
+    background: rgb(224, 199, 199);
+}
+
+.tile-x{
+    color: #42bed7;
+}
+
+.tile-o{
+    color: #f083de;
+}
+
+.tile-winner span{
+    color: #23ce6b;
+}
+
+@media only screen and (max-width: 1200px){
+    .wrapper{
+        flex-direction: column;
+    }
+
+    .left {
+        margin-bottom: 50px;
+    }
+    
+}
